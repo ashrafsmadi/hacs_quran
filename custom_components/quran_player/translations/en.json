@@ -1,0 +1,129 @@
+{
+  "title": "Quran Player",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Quran Player",
+        "description": "Choose one or more existing Home Assistant media players that can play a public HTTPS MP3 URL. Quran Player creates one virtual device and controls these outputs through Home Assistant.",
+        "data": {
+          "media_players": "Playback outputs",
+          "default_reciter": "Default reciter",
+          "default_volume": "Default volume"
+        },
+        "data_description": {
+          "media_players": "Select Chromecast speakers, Cast groups, or other media players that accept remote MP3 playback.",
+          "default_reciter": "The initial reciter. It can be changed later from the Quran Player device.",
+          "default_volume": "Applied to a target before its first Quran playback. Later volume changes are remembered per target."
+        }
+      }
+    },
+    "error": {
+      "no_targets": "Select at least one media player.",
+      "invalid_target": "Every output must be a media_player entity.",
+      "recursive_target": "Quran Player cannot control its own virtual media player."
+    },
+    "abort": {
+      "already_configured": "Quran Player is already configured. Use Configure to edit its outputs."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Configure Quran Player",
+        "description": "Add, remove, or reorder playback outputs and change startup defaults. Saving reloads the integration once; saved player selections remain when valid.",
+        "data": {
+          "media_players": "Playback outputs",
+          "default_reciter": "Default reciter",
+          "default_volume": "Default volume"
+        },
+        "data_description": {
+          "media_players": "The order determines which real player supplies aggregate position and duration information.",
+          "default_reciter": "Used when there is no valid saved reciter selection.",
+          "default_volume": "Used for targets that do not yet have a remembered Quran Player volume."
+        }
+      }
+    },
+    "error": {
+      "no_targets": "Select at least one media player.",
+      "invalid_target": "Every output must be a media_player entity.",
+      "recursive_target": "Quran Player cannot control its own virtual media player."
+    }
+  },
+  "entity": {
+    "select": {
+      "reciter": {
+        "name": "Reciter"
+      },
+      "surah": {
+        "name": "Surah"
+      },
+      "output": {
+        "name": "Playback output"
+      }
+    },
+    "number": {
+      "playback_duration": {
+        "name": "Playback duration"
+      }
+    }
+  },
+  "exceptions": {
+    "invalid_target": {
+      "message": "The selected playback target is no longer configured."
+    },
+    "target_unavailable": {
+      "message": "Playback target {target} is unavailable."
+    },
+    "no_targets": {
+      "message": "No playback targets are configured."
+    },
+    "play_failed": {
+      "message": "Unable to start playback on: {targets}."
+    },
+    "resume_failed": {
+      "message": "Unable to resume playback on: {targets}."
+    },
+    "pause_failed": {
+      "message": "Unable to pause playback on: {targets}."
+    },
+    "stop_failed": {
+      "message": "Unable to stop playback on: {targets}. Try stopping those players directly."
+    },
+    "volume_failed": {
+      "message": "Unable to set volume on: {targets}."
+    },
+    "mute_failed": {
+      "message": "Unable to change mute state on: {targets}."
+    },
+    "seek_failed": {
+      "message": "Unable to seek on: {targets}."
+    },
+    "invalid_volume": {
+      "message": "Volume must be between 0 and 1."
+    },
+    "invalid_position": {
+      "message": "Playback position cannot be negative."
+    },
+    "no_active_session": {
+      "message": "Start Quran playback before seeking."
+    },
+    "invalid_reciter": {
+      "message": "The selected reciter is not in the approved catalog."
+    },
+    "invalid_surah": {
+      "message": "The selected surah is unavailable for this reciter."
+    },
+    "invalid_repeat": {
+      "message": "Repeat must be Off, One, or All."
+    },
+    "invalid_duration": {
+      "message": "Playback duration must be between 0 and 720 minutes."
+    },
+    "invalid_media_id": {
+      "message": "The requested media item is not in the approved Quran Player catalog."
+    },
+    "integration_unloading": {
+      "message": "Quran Player is reloading or shutting down. Try again in a moment."
+    }
+  }
+}

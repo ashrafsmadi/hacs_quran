@@ -1,0 +1,18 @@
+# Private agent instructions and working documentation (requested by repository owner)
+/agent.md
+/docs/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/

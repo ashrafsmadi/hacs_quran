@@ -1,0 +1,129 @@
+{
+  "title": "مشغّل القرآن",
+  "config": {
+    "step": {
+      "user": {
+        "title": "إعداد مشغّل القرآن",
+        "description": "اختر مشغّل وسائط واحدًا أو أكثر في Home Assistant يمكنه تشغيل ملف MP3 عام عبر HTTPS. ينشئ التكامل جهازًا افتراضيًا واحدًا ويتحكم بهذه المخارج من خلال Home Assistant.",
+        "data": {
+          "media_players": "أجهزة التشغيل",
+          "default_reciter": "القارئ الافتراضي",
+          "default_volume": "مستوى الصوت الافتراضي"
+        },
+        "data_description": {
+          "media_players": "اختر مكبرات Chromecast أو مجموعات Cast أو أي مشغّل وسائط يقبل تشغيل MP3 عن بُعد.",
+          "default_reciter": "القارئ الأولي، ويمكن تغييره لاحقًا من جهاز مشغّل القرآن.",
+          "default_volume": "يُطبّق قبل أول تشغيل للقرآن على الجهاز، ثم يُحفظ مستوى مستقل لكل جهاز."
+        }
+      }
+    },
+    "error": {
+      "no_targets": "اختر مشغّل وسائط واحدًا على الأقل.",
+      "invalid_target": "يجب أن تكون جميع المخارج كيانات media_player.",
+      "recursive_target": "لا يمكن لمشغّل القرآن التحكم بمشغّله الافتراضي نفسه."
+    },
+    "abort": {
+      "already_configured": "تم إعداد مشغّل القرآن مسبقًا. استخدم «تكوين» لتعديل المخارج."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "تكوين مشغّل القرآن",
+        "description": "أضف أجهزة التشغيل أو احذفها أو أعد ترتيبها، وغيّر الإعدادات الافتراضية. يؤدي الحفظ إلى إعادة تحميل التكامل مرة واحدة.",
+        "data": {
+          "media_players": "أجهزة التشغيل",
+          "default_reciter": "القارئ الافتراضي",
+          "default_volume": "مستوى الصوت الافتراضي"
+        },
+        "data_description": {
+          "media_players": "يحدد الترتيب أي جهاز فعلي يزوّد موضع التشغيل ومدته في الحالة المجمعة.",
+          "default_reciter": "يُستخدم عند عدم وجود اختيار محفوظ صالح.",
+          "default_volume": "يُستخدم للأجهزة التي لا تملك مستوى صوت محفوظًا بعد."
+        }
+      }
+    },
+    "error": {
+      "no_targets": "اختر مشغّل وسائط واحدًا على الأقل.",
+      "invalid_target": "يجب أن تكون جميع المخارج كيانات media_player.",
+      "recursive_target": "لا يمكن لمشغّل القرآن التحكم بمشغّله الافتراضي نفسه."
+    }
+  },
+  "entity": {
+    "select": {
+      "reciter": {
+        "name": "القارئ"
+      },
+      "surah": {
+        "name": "السورة"
+      },
+      "output": {
+        "name": "جهاز التشغيل"
+      }
+    },
+    "number": {
+      "playback_duration": {
+        "name": "مدة التشغيل"
+      }
+    }
+  },
+  "exceptions": {
+    "invalid_target": {
+      "message": "جهاز التشغيل المحدد لم يعد موجودًا في الإعدادات."
+    },
+    "target_unavailable": {
+      "message": "جهاز التشغيل {target} غير متاح."
+    },
+    "no_targets": {
+      "message": "لا توجد أجهزة تشغيل مكوّنة."
+    },
+    "play_failed": {
+      "message": "تعذر بدء التشغيل على: {targets}."
+    },
+    "resume_failed": {
+      "message": "تعذر استئناف التشغيل على: {targets}."
+    },
+    "pause_failed": {
+      "message": "تعذر إيقاف التشغيل مؤقتًا على: {targets}."
+    },
+    "stop_failed": {
+      "message": "تعذر إيقاف التشغيل على: {targets}. حاول إيقاف هذه الأجهزة مباشرةً."
+    },
+    "volume_failed": {
+      "message": "تعذر ضبط مستوى الصوت على: {targets}."
+    },
+    "mute_failed": {
+      "message": "تعذر تغيير حالة الكتم على: {targets}."
+    },
+    "seek_failed": {
+      "message": "تعذر تغيير موضع التشغيل على: {targets}."
+    },
+    "invalid_volume": {
+      "message": "يجب أن يكون مستوى الصوت بين 0 و1."
+    },
+    "invalid_position": {
+      "message": "لا يمكن أن يكون موضع التشغيل سالبًا."
+    },
+    "no_active_session": {
+      "message": "ابدأ تشغيل القرآن قبل تغيير الموضع."
+    },
+    "invalid_reciter": {
+      "message": "القارئ المحدد ليس ضمن القائمة المعتمدة."
+    },
+    "invalid_surah": {
+      "message": "السورة المحددة غير متاحة لهذا القارئ."
+    },
+    "invalid_repeat": {
+      "message": "يجب أن يكون التكرار: إيقاف أو واحدة أو الكل."
+    },
+    "invalid_duration": {
+      "message": "يجب أن تكون مدة التشغيل بين 0 و720 دقيقة."
+    },
+    "invalid_media_id": {
+      "message": "عنصر الوسائط المطلوب غير موجود في قائمة مشغّل القرآن المعتمدة."
+    },
+    "integration_unloading": {
+      "message": "تجري إعادة تحميل مشغّل القرآن أو إيقافه. حاول مرة أخرى بعد قليل."
+    }
+  }
+}

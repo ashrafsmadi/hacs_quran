@@ -1,0 +1,15 @@
+{
+  "domain": "quran_player",
+  "name": "Quran Player",
+  "after_dependencies": ["media_player"],
+  "codeowners": ["@ashrafsmadi"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/ashrafsmadi/hacs_quran",
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/ashrafsmadi/hacs_quran/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "1.0.0"
+}

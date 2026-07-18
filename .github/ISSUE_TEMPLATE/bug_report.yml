@@ -1,0 +1,82 @@
+name: Bug report
+description: Report a reproducible Quran Player problem
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thank you for reporting a problem. Remove passwords, access tokens,
+        private URLs, IP addresses, and unrelated household data from every field.
+
+  - type: input
+    id: integration_version
+    attributes:
+      label: Quran Player version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: home_assistant_version
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.7.2"
+    validations:
+      required: true
+
+  - type: input
+    id: target_integration
+    attributes:
+      label: Output media-player integration
+      description: For example, Google Cast. Do not post a private entity ID.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: output_scope
+    attributes:
+      label: Output selection
+      options:
+        - One configured player
+        - All configured players
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Select ...
+        2. Press ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant redacted logs
+      description: Paste only the smallest relevant quran_player/target-integration excerpt.
+      render: text
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I tested the target with Home Assistant's standard media_player.play_media action.
+          required: true
+        - label: I removed credentials, tokens, private URLs, IP addresses, and unrelated household data.
+          required: true
+        - label: This is not a private security vulnerability.
+          required: true

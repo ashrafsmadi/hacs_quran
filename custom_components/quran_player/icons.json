@@ -1,0 +1,20 @@
+{
+  "entity": {
+    "select": {
+      "reciter": {
+        "default": "mdi:account-voice"
+      },
+      "surah": {
+        "default": "mdi:format-list-numbered"
+      },
+      "output": {
+        "default": "mdi:speaker-multiple"
+      }
+    },
+    "number": {
+      "playback_duration": {
+        "default": "mdi:timer-outline"
+      }
+    }
+  }
+}
