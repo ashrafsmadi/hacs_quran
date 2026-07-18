@@ -267,7 +267,7 @@ python3.14 -m venv .venv
 .venv/bin/pip install "homeassistant==2026.7.2" pytest pytest-asyncio pillow ruff
 .venv/bin/ruff check .
 .venv/bin/ruff format --check .
-.venv/bin/pytest
+.venv/bin/python -m pytest
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a change. Public behavior

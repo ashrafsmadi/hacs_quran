@@ -43,7 +43,7 @@ jobs:
         run: ruff format --check .
 
       - name: Run pure and repository tests
-        run: pytest --ignore=tests/test_homeassistant_smoke.py
+        run: python -m pytest --ignore=tests/test_homeassistant_smoke.py
 
   home-assistant:
     name: Home Assistant ${{ matrix.homeassistant }}
@@ -75,7 +75,7 @@ jobs:
           pytest-asyncio==1.4.0
 
       - name: Run complete test suite
-        run: pytest
+        run: python -m pytest
 
   hassfest:
     name: Hassfest
