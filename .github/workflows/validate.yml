@@ -88,7 +88,7 @@ jobs:
           persist-credentials: false
 
       - name: Validate Home Assistant integration
-        uses: home-assistant/actions/hassfest@f4ca6f671bd429efb108c0f2fa0ae8af0215986c
+        uses: home-assistant/actions/hassfest@423f101405f08e80c0df5b6520655f9d8a0001a4
 
   hacs:
     name: HACS
